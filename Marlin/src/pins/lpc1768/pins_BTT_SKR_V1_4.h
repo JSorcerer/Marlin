@@ -313,6 +313,14 @@
     #define LCD_PINS_D4              EXP1_06_PIN
     #define BEEPER_PIN               EXP1_03_PIN
 
+  #elif ENABLED(ZONESTAR_LCD)
+    #define LCD_PINS_RS       EXP1_06_PIN   //P1_20
+    #define LCD_PINS_ENABLE   EXP1_08_PIN   //P1_18
+    #define LCD_PINS_D4       EXP1_03_PIN   //P1_23
+    #define LCD_PINS_D5       EXP1_05_PIN   //P1_21
+    #define LCD_PINS_D6       EXP1_07_PIN   //P1_19
+    #define LCD_PINS_D7       EXP1_09_PIN   //P0_28
+    #define ADC_KEYPAD_PIN    EXP1_10_PIN   //P1_30
   #elif ENABLED(ANET_FULL_GRAPHICS_LCD)
     #error "CAUTION! ANET_FULL_GRAPHICS_LCD requires wiring modifications. See 'pins_BTT_SKR_V1_4.h' for details. Comment out this line to continue."
 
@@ -484,7 +492,7 @@
 #endif // HAS_WIRED_LCD
 
 #if HAS_ADC_BUTTONS
-  #error "ADC BUTTONS do not work unmodifed on SKR 1.4, The ADC ports cannot take more than 3.3v."
+  //#error "ADC BUTTONS do not work unmodifed on SKR 1.4, The ADC ports cannot take more than 3.3v."
 #endif
 
 //
